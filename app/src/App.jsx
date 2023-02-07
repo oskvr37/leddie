@@ -2,7 +2,7 @@ import Slider from "./components/Slider";
 import { io } from "socket.io-client";
 import { useState } from "react";
 
-const socket = io("http://localhost:80");
+const socket = io("http://192.168.100.4:80");
 
 function App() {
   const [hue, setHue] = useState(0);
