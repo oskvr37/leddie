@@ -1,7 +1,7 @@
 :root {
   font-family: Helvetica, Arial, sans-serif;
 
-  background-color: #333;
+  background-color: #222;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +28,7 @@ body {
 
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  appearance: none;
   width: 100%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
 }
@@ -48,4 +49,10 @@ input[type=range]::-ms-track {
   background: transparent; 
   border-color: transparent;
   color: transparent;
+}
+
+.sliders__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
