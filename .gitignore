@@ -24,3 +24,6 @@ dist-ssr
 
 # Python
 __pycache__
+
+# App
+dist
