@@ -1,5 +1,6 @@
 import uvicorn
 import socketio
+
 from leds import setColor
 
 
@@ -12,6 +13,7 @@ sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
 app = socketio.ASGIApp(sio, static_files=static_files)
 
 
+
 @sio.event
 async def connect(sid, environ):
     print(f'✅ {sid} connected!')
@@ -20,6 +22,7 @@ async def connect(sid, environ):
 @sio.event
 def disconnect(sid):
     print(f'❌ {sid} disconnected!')
+
 
 @sio.on('color')
 async def color(sid, data):
