@@ -8,11 +8,12 @@ The app is built using Python for the server-side logic, React for the front-end
 
 # Usage
 
-- Install Python requirements
+- Install Python requirements `pip install -r requirements.txt`
 - Build app using `npm run build` in app directory (remember to install packages with `npm install`)
 - Run main program with `main.py`, you can use screen for running the app in background
 
 # TODO
 
-- Fetch current color of LEDs
-- CRUD of favorite colors
+1. User config for ip and ports
+2. Fetch current color of LEDs
+3. CRUD of favorite colors

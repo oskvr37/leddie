@@ -1,17 +1,13 @@
 import board
-import neopixel
-
-from colorsys import hsv_to_rgb
-
-pixels = neopixel.NeoPixel(board.D18, 86)
+# import neopixel
 
 
-def hsv2rgb(h,s,v):
-    return tuple(round(i * 255) for i in hsv_to_rgb(h,s,v))
+class Leds:
+    def __init__(self) -> None:
+        self.current_color = (127, 127, 127)
+        self.pixels = neopixel.NeoPixel(board.D18, 86)
+        self.pixels.fill(self.current_color)
 
-
-def setColor(hue, brightness):
-    # print(f'hue: {hue}\t brightness {brightness}')
-    rgb = hsv2rgb(int(hue) / 360, 1, int(brightness) / 100)
-    # print(rgb)
-    pixels.fill((rgb))
+    def setColor(self, rgb):
+        self.current_color = rgb
+        self.pixels.fill(self.current_color)
