@@ -1,4 +1,5 @@
 board
-neopixel
-socketio
+rpi_ws281x
+adafruit-circuitpython-neopixel
+python-socketio
 uvicorn
