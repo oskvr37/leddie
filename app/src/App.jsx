@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import hsv2rgb from "./utils/hsv2rgb";
 import rgb2hsv from "./utils/rgbtohsv";
 
-const socket = io("http://192.168.100.2:80");
+const socket = io("http://192.168.100.4:80");
 
 function App() {
 
@@ -25,7 +25,6 @@ function App() {
 
   useEffect(() => {
     if (hue >= 0 && brightness >= 0) {
-      console.log('hue and b', hue, brightness)
       let [red,green,blue] = hsv2rgb(hue, brightness)
       socket.emit("setColor", [red,green,blue]);
     }
