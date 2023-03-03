@@ -1,5 +1,5 @@
 import board
-# import neopixel
+import neopixel
 
 
 class Leds:
