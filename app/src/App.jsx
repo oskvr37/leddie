@@ -8,12 +8,11 @@ import rgb2hsv from "./utils/rgbtohsv";
 const socket = io("http://192.168.100.4:80");
 
 function App() {
-
   socket.on("connect", () => {
     socket.emit("getColor", (response) => {
-      console.log('response', response[0])
-      let [r,g,b] = response[0]
-      var [server_hue, _, server_brightness] = rgb2hsv(r,g,b);
+      console.log("response", response[0]);
+      let [r, g, b] = response[0];
+      var [server_hue, _, server_brightness] = rgb2hsv(r, g, b);
       console.log("server", server_hue, server_brightness);
       setHue(server_hue);
       setBrightness(server_brightness);
@@ -25,8 +24,8 @@ function App() {
 
   useEffect(() => {
     if (hue >= 0 && brightness >= 0) {
-      let [red,green,blue] = hsv2rgb(hue, brightness)
-      socket.emit("setColor", [red,green,blue]);
+      let [red, green, blue] = hsv2rgb(hue, brightness);
+      socket.emit("setColor", [red, green, blue]);
     }
   }, [hue, brightness]);
 
